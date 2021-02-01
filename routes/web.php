@@ -13,17 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->to('/fk');
-});
-
 Route::namespace('App\Http\Controllers')->group(function() {
-    Route::get('/bst', 'BstController@page');
-    Route::post('/bst', 'BstController@input');
-});
-
-Route::namespace('App\Http\Controllers')->group(function() {
-    Route::get('/fk', 'ForwardkeyController@page');
-    Route::post('/fk', 'ForwardkeyController@input');
-    Route::get('/fk/diagram', 'ForwardkeyController@diagram');
+    Route::get('/', 'MenuController');
+    Route::prefix('bst')->group(function() {
+        Route::get('/', 'BstController@page');
+        Route::post('/', 'BstController@input');
+    });
+    Route::prefix('fk')->group(function() {
+        Route::get('/', 'ForwardkeyController@page');
+        Route::post('/', 'ForwardkeyController@input');
+        Route::get('/diagram', 'ForwardkeyController@diagram');
+    });
+    Route::prefix('s3')->group(function() {
+        Route::post('/', 'S3Controller@uploadFile')->name('upload');
+        Route::get('/', 'S3Controller@uploadView')->name('page_upload');
+        Route::get('hapus', 'App\Http\Controllers\PercobaanController@deleteFile')->name('s3-hapus');
+    });
 });

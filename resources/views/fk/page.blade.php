@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
     <form action="" enctype="multipart/form-data" method="POST">
         @csrf
         <input type="file" name="forwardkey">
@@ -15,5 +10,4 @@
             <li><a href="fk/diagram">{{$f}}</a></li>
         @endforeach
     </ul>
-</body>
-</html>
+@endsection

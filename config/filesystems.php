@@ -51,6 +51,18 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+        'custom-s3' => [
+            'driver' => 's3',
+            'endpoint' => env('AWS_ENDPOINT'),
+            'use_path_style_endpoint' => true,
+            'credentials' => [
+                'key' => env('AWS_ACCESS_KEY'),
+                'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            ],
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET')
+        ],
+
 
     ],
 

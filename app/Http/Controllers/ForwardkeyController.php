@@ -238,6 +238,5 @@ class ForwardkeyController extends Controller
         $file->storeAs($upload_path, 'forwardkey.xlsx');
         // Baca file yang di upload
         return redirect()->back();
-        // Hasil baca file ubah ke json
     }
 }

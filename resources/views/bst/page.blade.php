@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
     <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <h1>Form pengiriman data Bst</h1>
@@ -15,5 +10,4 @@
         </div>
         <input type="submit" value="kirim">
     </form>
-</body>
-</html>
+@endsection
