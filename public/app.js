@@ -1,14 +1,25 @@
 Vue.use(VueApexCharts);
+Vue.use(httpVueLoader);
 Vue.component('apexchart', VueApexCharts);
 const titleComponent = `<h1>{{ title }}</h1>`;
 
-var appTitle = new Vue({
+//var appTitle = new Vue({
+//    el: '#app-title',
+//    template: titleComponent,
+//    data: function() { 
+//        return {
+//            title: 'Diagram Forwardkeys'
+//        };
+//    }
+//});
+
+//import Title from './components/Title'
+//Vue.config.productionTip = false
+
+new Vue({
     el: '#app-title',
-    template: titleComponent,
-    data: function() { 
-        return {
-            title: 'Diagram Forwardkeys'
-        };
+    component: { 
+        'app-title': httpVueLoader('components/apptitle.vue')
     }
 });
 
