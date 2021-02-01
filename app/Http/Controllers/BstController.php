@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class BstController extends Controller
 {
     public function page(Request $request) {
-        return view('bst');
+        return view('bst.page');
     }
 
     public function input(Request $request) {

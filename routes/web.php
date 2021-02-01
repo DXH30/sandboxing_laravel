@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->to('/bst');
+    return redirect()->to('/fk');
 });
 
 Route::namespace('App\Http\Controllers')->group(function() {
     Route::get('/bst', 'BstController@page');
     Route::post('/bst', 'BstController@input');
+});
+
+Route::namespace('App\Http\Controllers')->group(function() {
+    Route::get('/fk', 'ForwardkeyController@page');
+    Route::post('/fk', 'ForwardkeyController@input');
+    Route::get('/fk/diagram', 'ForwardkeyController@diagram');
 });

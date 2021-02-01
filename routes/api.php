@@ -23,3 +23,7 @@ Route::namespace('App\Http\Controllers\API')->group(function() {
     Route::post('bst', 'BstController@input');
     Route::get('bstd/{id}', 'BstController@delete');
 });
+
+Route::namespace('App\Http\Controllers')->group(function() {
+    Route::get('/fk', 'ForwardkeyController@check');
+});
