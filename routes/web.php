@@ -29,4 +29,8 @@ Route::namespace('App\Http\Controllers')->group(function() {
         Route::get('/', 'S3Controller@uploadView')->name('page_upload');
         Route::get('hapus', 'App\Http\Controllers\PercobaanController@deleteFile')->name('s3-hapus');
     });
+    Route::prefix('kh')->group(function() {
+        // Karena mengambil dari api luar (keyhole.co) jadi halaman nya hanya 1
+        Route::get('/', 'Keyholecontroller@page');
+    });
 });
